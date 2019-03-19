@@ -1,6 +1,7 @@
 import { DatabaseService } from './../database.service';
 import { Component, OnInit } from '@angular/core';
 import * as uuidV4 from 'uuid/v4';
+import { TODO } from '../todo';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
