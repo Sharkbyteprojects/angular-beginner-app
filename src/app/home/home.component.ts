@@ -1,5 +1,6 @@
+import { DatabaseService } from './../database.service';
 import { Component, OnInit } from '@angular/core';
-
+import * as uuidV4 from 'uuid/v4';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private databaseService: DatabaseService) {
 
+   }
+addTodo(title: string){
+  this.databaseService.todos.add({ id: uuidV4(), title, done: false});
+}
   ngOnInit() {
   }
 
