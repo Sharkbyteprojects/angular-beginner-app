@@ -2,4 +2,5 @@ language: node_js
 node_js:
   - "7"
 script:
-    npm start
+    -npm start
+    -curl http://localhost:4200/
