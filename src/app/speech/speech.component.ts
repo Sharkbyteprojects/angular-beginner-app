@@ -11,5 +11,12 @@ export class SpeechComponent implements OnInit {
 
   ngOnInit() {
   }
-
+readAloud(text: string){
+  if('speechSynthesis' in window){
+  const utterance = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(utterance);
+  }else{
+    alert('Dieser Browser unterstuetzt die Speech Synthesis API nicht!');
+  }
+}
 }
